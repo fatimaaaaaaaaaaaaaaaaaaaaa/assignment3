@@ -1,0 +1,49 @@
+<%- include ../partials/header %>
+<%- include ../partials/main_nav %>
+<main class="container">
+    
+      <div class="row">
+        <div class="col-md-offset-3 col-md-12">
+            <h1><%= title %></h1>
+            <br>
+            <a href="/plants/add" class="btn btn-primary" role="button">
+              <i class="fas fa-plus-circle"></i>Add a plant </a>
+            <br>
+            <br>
+            
+      <table class="table table-bordered table-striped table-hover">
+      <tr> 
+        <th class="text-center col-2"> Name </th>
+        <th class="text-center col-2"> Age </th>
+        <th class="text-center col-2"> Price </th>
+        <th class="text-center col-1"> Water Amount </th>
+        
+      </tr>
+      <% for(let count=0; count<Plantlist.length; count++) { %> 
+        <tr> 
+            <td class="text-center col-2"> <%= Plantlist[count].name %> </td>
+            <td class="text-center col-2"> <%= Plantlist[count].age %></td>
+            <td class="text-center col-2"> <%= Plantlist[count].price %></td>
+            <td class="text-center col-2"> <%= Plantlist[count].wateramt %></td>
+            <td class="text-center col-1">
+             <a href="/plants/edit/<%= Plantlist[count]._id %>"
+             class="btn btn-primary">
+             <i class="fas fa-pencil-alt"></i> Edit </a> </td>
+            <td class="text-center col-1">
+             <a href="/plants/delete/<%= Plantlist[count]._id %>"
+             class="btn btn-danger">
+             <i class="fas fa-trash-alt"></i> Delete </a> </td>
+        </tr> 
+      <% } %>
+      </table>
+      
+      </div>
+      </div>
+    
+ 
+</main>
+
+
+
+<%- include ../partials/bottom_nav %>
+<%- include ../partials/footer %>

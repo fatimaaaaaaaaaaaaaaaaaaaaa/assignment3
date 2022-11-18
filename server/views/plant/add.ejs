@@ -1,0 +1,55 @@
+<%- include ../partials/header %>
+<%- include ../partials/main_nav %>
+<!--add page-->
+
+<div class="contrainer">
+    <div class="row"> 
+        <div class="col-md-offset-3 col-md-6">
+            <h1> <%= title %></h1> <br><br>
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="nameTextField">Plant Name </label>
+                    <input type="text" class=form-control 
+                    id="nameTextField"
+                    placeholder="Enter the Plant Name"
+                    name="name" required>
+                </div>
+
+
+                 <div class="form-group">
+                    <label for="ageTextField"> Plant Age </label>
+                    <input type="text" class=form-control 
+                    id="ageTextField"
+                    placeholder="Enter the Age of Plant"
+                    name="age" required>
+                </div>
+
+                 <div class="form-group">
+                    <label for="priceTextField"> Price </label>
+                    <input type="number" class=form-control 
+                    id="priceTextField"
+                    placeholder="Enter Price of the Plant"
+                    name="price" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="wateramtTextField"> Water Amount </label>
+                    <input type="text" class=form-control 
+                    id="wateramtTextField"
+                    placeholder="Enter the Water Amount"
+                    name="wateramt" required>
+                </div>
+                <br>
+                <button class="btn btn-primary" type="submit"> 
+                    <i class="fas fa-edit"> </i> Submit 
+                </button>
+
+                <a href="/plants" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Cancel </a>
+            </form>
+
+        </div>
+    </div> 
+</div> 
+<%- include ../partials/bottom_nav %>
+<%- include ../partials/footer %>
